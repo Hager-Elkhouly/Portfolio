@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation Message with Icon</title>
+    <!-- إضافة Font Awesome (أو يمكنك استخدام Bootstrap Icons) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .message-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            display: none; /* إخفاء الرسالة أولاً */
+        }
+
+        .message-container h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .message-container p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .message-container .cta {
+            background-color: #f70178;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta:hover {
+            background-color: #99015e;
+        }
+
+        /* إضافة الأيقونة */
+        .icon {
+            font-size: 48px;
+            color: #00cc00;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .message-container {
+                padding: 15px;
+            }
+
+            .message-container h1 {
+                font-size: 20px;
+            }
+
+            .message-container p {
+                font-size: 14px;
+            }
+
+            .cta {
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="showMessage()">Submit</button> <!-- الزر الذي عند الضغط عليه يظهر الرسالة -->
+
+    <!-- الرسالة التي ستظهر عند الضغط على الزر -->
+    <div class="message-container" id="confirmationMessage">
+        <div class="icon">
+            <i class="fas fa-check-circle"></i> <!-- أيقونة الصح -->
+        </div>
+        <h1>Thank You for Your Message!</h1>
+        <p>Your message has been successfully received. We will get back to you as soon as possible.</p>
+        <a href="index.html" class="cta">Return to Home</a>
+    </div>
+
+    <script>
+        function showMessage() {
+            // إظهار الرسالة عند الضغط على الزر
+            document.getElementById("confirmationMessage").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
